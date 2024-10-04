@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+</head>
+<body>
+<div class="flex">
+
+    <aside id="sidebar-multi-level-sidebar" class="fixed top-0 left-0 z-40 h-screen transition-transform -translate-x-full sm:translate-x-0 overflow-x-hidden" aria-label="Sidebar">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 min-w-[200px] max-w-[400px] w-auto">
+            <ul class="space-y-2 font-medium">
+                <li>
+                    <span class=class="ms-3 text-lg font-bold break-words">MP - MANUAL DE PETICIONAMENTO ELETRONICO</span>
+                </li>
+                
+                <!-- Como acessar o Site de Peticionamento -->
+                <li>
+                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-acessar" data-collapse-toggle="dropdown-acessar">
+                        <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                        <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como acessar o Site de Peticionamento</span>
+                    </button>
+                    <ul id="dropdown-acessar" class=" py-2 space-y-2">
+                        <li>
+                            <a href="./pages/Item1.html" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Entrar no site de Peticionamento</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <!-- Como criar uma NOVA PETIÇÃO -->
+                <li>
+                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-nova-peticao" data-collapse-toggle="dropdown-nova-peticao">
+                        <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                        <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como criar uma NOVA PETIÇÃO</span>
+                    </button>
+                    <ul id="dropdown-nova-peticao" class=" py-2 space-y-2">
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Irá clicar em Petições</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Clicar na opção NOVA PETIÇÃO</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">3. Preencher o formulário de nova p</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">4. Enviar Petição</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <!-- Como fazer NOVA PETIÇÃO INCIDENTAL -->
+                <li>
+                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-incidental" data-collapse-toggle="dropdown-incidental">
+                        <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                        <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como fazer NOVA PETIÇÃO INCIDENTAL</span>
+                    </button>
+                    <ul id="dropdown-incidental" class=" py-2 space-y-2">
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Irá clicar em Petições</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Clicar na opção Nova Incidental</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">3. Preencher o Formulário</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">4. Adicionando novo arquivo</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">5. Enviar Petição Incidental</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <!-- Como acessar os Representantes -->
+                <li>
+                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-representantes" data-collapse-toggle="dropdown-representantes">
+                        <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                        <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como acessar os Representantes</span>
+                    </button>
+                    <ul id="dropdown-representantes" class=" py-2 space-y-2">
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Gerenciar Representantes</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Menu de representantes</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <!-- Adicionando um novo Representante -->
+                <li>
+                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-novo-representante" data-collapse-toggle="dropdown-novo-representante">
+                        <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                        <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Adicionando um novo Representante</span>
+                    </button>
+                    <ul id="dropdown-novo-representante" class=" py-2 space-y-2">
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Como adicionar um representante</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Preencher Formulário de Adicionar Representante</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">3. Clicar em Enviar para Adicionar esse Representante</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">4. Menu de Representantes</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <!-- Como consultar seus Processos -->
+                <li>
+                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-consultar-processos" data-collapse-toggle="dropdown-consultar-processos">
+                        <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                        <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como consultar seus Processos</span>
+                    </button>
+                    <ul id="dropdown-consultar-processos" class=" py-2 space-y-2">
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Consultar Processos</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Menu Inicial</a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">3. Aba de Meus Processos Administrativos</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <main class="flex-1 p-4 sm:ml-[200px] lg:ml-[400px]">
+        <h1 class="text-2xl font-bold mb-4">Manual</h1>
+        
+
+        <section id="criar-nova-peticao" class="max-w-3xl mx-auto px-4 py-8 mt-8">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-nova-peticao" data-collapse-toggle="dropdown-content-nova-peticao">
+                    <h2 class="text-3xl font-bold text-gray-800 flex items-center">
+                        <svg class="w-6 h-6 mr-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                        ✔️ Como criar uma NOVA PETIÇÃO
+                    </h2>
+                </button>
+                
+                <div id="dropdown-content-nova-peticao" class="p-6 border-t border-gray-200">
+                    <!-- Conteúdo do dropdown aqui -->
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-700">2. Irá clicar em Petições</h3>
+                        <p class="mb-4 text-gray-600">Para criar uma nova petição, você irá na barra de navegação e clicar em petições</p>
+                        <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/c9f99aff-7ac7-4c2d-9e49-056ef8bc55d5/c46f595d-d2f1-49b6-b622-4cfac03c6329.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.3881&fp-y=0.0294&fp-z=2.7021&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=486&mark-y=8&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yMjcmaD0xMDEmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
+                             alt="Irá clicar em Petições" 
+                             class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                             style="border-radius: 8px; border: 1px solid #F4F2F7;" />
+                    </div>
+                    <!-- Outros itens do conteúdo aqui -->
+                </div>
+            </div>
+        </section>
+        
+        
+    </main>
+</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('[data-collapse-toggle]');
+
+    dropdowns.forEach(dropdown => {
+        const dropdownToggle = dropdown;
+        const dropdownContent = document.getElementById(dropdown.getAttribute('aria-controls'));
+        const dropdownIcon = dropdownToggle.querySelector('svg');
+
+        dropdownToggle.addEventListener('click', function() {
+            dropdownContent.classList.toggle('hidden');
+            dropdownIcon.classList.toggle('rotate-180');
+        });
+    });
+});
+    </script>
+</body>
+</html>
