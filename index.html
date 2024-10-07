@@ -6,514 +6,600 @@
     <title> MANUAL DE PETICIONAMENTO ELETRONICO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <style>
+        /* Estiliza a barra de rolagem inteira */
+        ::-webkit-scrollbar {
+            width: 12px;
+            margin-right: 4px
+        }
+
+        /* Estiliza o "thumb" da barra de rolagem */
+        ::-webkit-scrollbar-thumb {
+            background-color: #a7a2a2;
+            border-radius: 6px;
+            border: 3px solid #fff;
+        }
+
+        /* Estiliza o "track" da barra de rolagem */
+        ::-webkit-scrollbar-track {
+            background-color: #e0e0e0;
+        }
+
+        /* Para Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #e7eaee #cbd5e0;
+        }
+        .navbar-custom {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 200px; /* Largura da sidebar em telas menores */
+        z-index: 1000;
+        transition: left 0.3s ease;
+        background-color: #f9fafb; /* Cor de fundo da navbar */
+    }
+
+        @media (min-width: 1024px) {
+            .navbar-custom {
+                left: 400px; /* Largura da sidebar em telas maiores */
+            }
+        }
+
+        @media (max-width: 640px) {
+            .navbar-custom {
+                left: 0; /* Remove a margem em telas muito pequenas */
+            }
+        }
+
+        /* Adicione este estilo para ajustar o conteúdo principal */
+        main {
+            padding-top: 80px; 
+            margin: 130px;
+        }
+        .section-padding {
+            scroll-margin-top: 88px; 
+        }
+        @media (max-width: 640px) {
+            .section-padding {
+                scroll-margin-top: 68px;
+        } }
+        
+    </style>
 </head>
 <body>
-<div class="flex">
-
-    <aside id="sidebar-multi-level-sidebar" class="fixed top-0 left-0 z-40 h-screen transition-transform -translate-x-full sm:translate-x-0 overflow-x-hidden" aria-label="Sidebar">
-        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 min-w-[200px] max-w-[400px] w-auto">
-            <ul class="space-y-2 font-medium">
-                <li>
-                    <span class=class="ms-3 text-lg font-bold break-words">MP - MANUAL DE PETICIONAMENTO ELETRONICO</span>
-                </li>
-                
-                <!-- Como acessar o Site de Peticionamento -->
-                <li>
-                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-acessar" data-collapse-toggle="dropdown-acessar">
-                        <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                        <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como acessar o Site de Peticionamento</span>
-                    </button>
-                    <ul id="dropdown-acessar" class=" py-2 space-y-2">
-                        <li>
-                            <a href="#acessar-site-peticionamento" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Entrar no site de Peticionamento</a>
-                        </li>
-                    </ul>
-                </li>
-                
-                <!-- Como criar uma NOVA PETIÇÃO -->
-                 
-                <li>
-                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-nova-peticao" data-collapse-toggle="dropdown-nova-peticao">
-                        <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                        <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como criar uma NOVA PETIÇÃO</span>
-                    </button>
-                    <ul id="dropdown-nova-peticao" class=" py-2 space-y-2">
-                        <li>
-                            <a href="#dropdown-content-acessar-site" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Irá clicar em Petições</a>
-                        </li>
-                        <li>
-                            <a href="#clicar-opcao2-peticao" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Clicar na opção NOVA PETIÇÃO</a>
-                        </li>
-                        <li>
-                            <a href="#clicar-opcao3-peticao" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">3. Preencher o formulário de nova p</a>
-                        </li>
-                        <li>
-                            <a href="#clicar-opcao4-peticao" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">4. Enviar Petição</a>
-                        </li>
-                    </ul>
-                </li>
-                
-                <!-- Como fazer NOVA PETIÇÃO INCIDENTAL -->
-                <li>
-                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-incidental" data-collapse-toggle="dropdown-incidental">
-                        <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                        <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como fazer NOVA PETIÇÃO INCIDENTAL</span>
-                    </button>
-                    <ul id="dropdown-incidental" class=" py-2 space-y-2">
-                        <li>
-                            <a href="#clicar-opcao1-peticaoincidental" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Irá clicar em Petições</a>
-                        </li>
-                        <li>
-                            <a href="#clicar-opcao2-peticaoincidental" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Clicar na opção Nova Incidental</a>
-                        </li>
-                        <li>
-                            <a href="#clicar-opcao3-peticaoincidental" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">3. Preencher o Formulário</a>
-                        </li>
-                        <li>
-                            <a href="#clicar-opcao4-peticaoincidental" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">4. Adicionando novo arquivo</a>
-                        </li>
-                        <li>
-                            <a href="#clicar-opcao5-peticaoincidental" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">5. Enviar Petição Incidental</a>
-                        </li>
-                    </ul>
-                </li>
-                
-                <!-- Como acessar os Representantes -->
-                <li>
-                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-representantes" data-collapse-toggle="dropdown-representantes">
-                        <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                        <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como acessar os Representantes</span>
-                    </button>
-                    <ul id="dropdown-representantes" class=" py-2 space-y-2">
-                        <li>
-                            <a href="#menu-representantes1" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Gerenciar Representantes</a>
-                        </li>
-                        <li>
-                            <a href="#menu-representantes2" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Menu de representantes</a>
-                        </li>
-                    </ul>
-                </li>
-                
-                <!-- Adicionando um novo Representante -->
-                <li>
-                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-novo-representante" data-collapse-toggle="dropdown-novo-representante">
-                        <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                        <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Adicionando um novo Representante</span>
-                    </button>
-                    <ul id="dropdown-novo-representante" class=" py-2 space-y-2">
-                        <li>
-                            <a href="#adicionar-representante1" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Como adicionar um representante</a>
-                        </li>
-                        <li>
-                            <a href="#adicionar-representante2" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Preencher Formulário de Adicionar Representante</a>
-                        </li>
-                        <li>
-                            <a href="#adicionar-representante3" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">3. Clicar em Enviar para Adicionar esse Representante</a>
-                        </li>
-                        <li>
-                            <a href="#adicionar-representante4" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">4. Menu de Representantes</a>
-                        </li>
-                    </ul>
-                </li>
-                
-                <!-- Como consultar seus Processos -->
-                <li>
-                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-consultar-processos" data-collapse-toggle="dropdown-consultar-processos">
-                        <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                        <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como consultar seus Processos</span>
-                    </button>
-                    <ul id="dropdown-consultar-processos" class=" py-2 space-y-2">
-                        <li>
-                            <a href="#consultar-processos1" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Consultar Processos</a>
-                        </li>
-                        <li>
-                            <a href="#consultar-processos2" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Menu Inicial</a>
-                        </li>
-                        <li>
-                            <a href="#consultar-processos3" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">3. Aba de Meus Processos Administrativos</a>
-                        </li>
-                        <li>
-                            <a href="#consultar-processos4" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">4. Aba de Minhas Petições</a>
-                            <li>
-                                <a href="#consultar-processos5" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">5. Aba de Minhas Incidentais</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">6. Aba de Assinaturas Pendentes</a>
-                            </li>
-                            
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </aside>
-
-    <main class="flex-1 p-4 sm:ml-[200px] lg:ml-[400px]">
-        <h1 class="text-2xl font-bold mb-4"> MANUAL DE PETICIONAMENTO ELETRONICO</h1>
-        <section id="acessar-site-peticionamento" class="max-w-3xl mx-auto px-4 py-8 mt-8">
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-acessar-site" data-collapse-toggle="dropdown-content-acessar-site">
-                    <h2 class="text-3xl font-bold text-gray-800 flex items-center">
-                        <svg class="w-6 h-6 mr-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                        ✔️ Como acessar o Site de Peticionamento Eletrônico
-                    </h2>
-                </button>
-                
-                <div id="dropdown-content-acessar-site" class="p-6 border-t border-gray-200 ">
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">
-                        1. Entrar no site de Peticionamento Eletrônico
-                    </h3>
-                    <p class="mb-4 text-left" >
-                        <a href="https://peticionamento.mpap.mp.br/site/" 
-                           target="_blank" 
-                           rel="noopener noreferrer nofollow" 
-                           class="text-blue-600 hover:underline text-lg">
-                            https://peticionamento.mpap.mp.br/site/
-                        </a>
-                    </p>
-                    <p class="mb-6 text-left text-gray-600" >Entrar com seu certificado</p>
-                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/a7482bc5-65e0-431b-b619-072f46e8d73c/e9c9484d-5d41-45ac-99a3-7e0b6e1e74d9.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.2644&fp-y=0.3998&fp-z=2.1543&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=388&mark-y=314&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz00MjQmaD0xMTQmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
-                         alt="Entrar no site de Peticionamento Eletrônico" 
-                         class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
-                    />
-                </div>
+   <div>
+    <nav class="bg-gray-50 p-6 navbar-custom">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="text-[#4C5C96] font-bold text-lg">MP - Manual de Peticionamento Eletrônico</span>
             </div>
-        </section>
+            <div class="flex items-center">
+                <a href="https://www.mpap.mp.br/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold">Acessar Portal-MP</a>
+                <a href="https://peticionamento.mpap.mp.br/site/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold">Acessar Peticionamento Eletrônico</a>
+            </div>
+        </div>
+    </nav>
 
-        <section id="criar-nova-peticao" class="max-w-3xl mx-auto px-4 py-8 mt-8">
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-nova-peticao" data-collapse-toggle="dropdown-content-nova-peticao">
-                    <h2 class="text-3xl font-bold text-gray-800 flex items-center">
-                        <svg class="w-6 h-6 mr-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                        ✔️ Como criar uma NOVA PETIÇÃO
-                    </h2>
-                </button>
-                
-                <div id="dropdown-content-nova-peticao" class="p-6 border-t border-gray-200">
-                    <div class="mb-8" id="clicar-opcao1-peticao">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-700">1. Irá clicar em Petições</h3>
-                        <p class="mb-4 text-gray-600" >Para criar uma nova petição, você irá na barra de navegação e clicar em petições</p>
-                        <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/c9f99aff-7ac7-4c2d-9e49-056ef8bc55d5/c46f595d-d2f1-49b6-b622-4cfac03c6329.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.3881&fp-y=0.0294&fp-z=2.7021&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=486&mark-y=8&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yMjcmaD0xMDEmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
-                             alt="Irá clicar em Petições" 
+    <div class="flex">
+        
+    
+
+        <aside id="sidebar-multi-level-sidebar" class="fixed top-0 left-0 z-40 h-screen transition-transform -translate-x-full sm:translate-x-0 overflow-x-hidden" aria-label="Sidebar">
+            <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 min-w-[200px] max-w-[400px] w-auto">
+                <ul class="space-y-2 font-medium">
+                    <li class="p-5 flex justify-left items-center h-16">
+                        <img src="https://www.mpap.mp.br/templates/portal/images/logo-mpap.png" alt="MP Logo" class="h-16 w-auto">
+                        
+                    </li>
+                    
+                    <li>
+                        <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-acessar" data-collapse-toggle="dropdown-acessar">
+                            <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                            </svg>
+                            <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como acessar o Site de Peticionamento</span>
+                        </button>
+                        <ul id="dropdown-acessar" class=" py-2 space-y-2">
+                            <li>
+                                <a href="#acessar-site-peticionamento" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Entrar no site de Peticionamento</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                     
+                    <li>
+                        <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-nova-peticao" data-collapse-toggle="dropdown-nova-peticao">
+                            <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                            </svg>
+                            <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como criar uma NOVA PETIÇÃO</span>
+                        </button>
+                        <ul id="dropdown-nova-peticao" class=" py-2 space-y-2">
+                            <li>
+                                <a href="#dropdown-content-acessar-site" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Irá clicar em Petições</a>
+                            </li>
+                            <li>
+                                <a href="#clicar-opcao2-peticao" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Clicar na opção NOVA PETIÇÃO</a>
+                            </li>
+                            <li>
+                                <a href="#clicar-opcao3-peticao" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">3. Preencher o formulário de nova p</a>
+                            </li>
+                            <li>
+                                <a href="#clicar-opcao4-peticao" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">4. Enviar Petição</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-incidental" data-collapse-toggle="dropdown-incidental">
+                            <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                            </svg>
+                            <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como fazer NOVA PETIÇÃO INCIDENTAL</span>
+                        </button>
+                        <ul id="dropdown-incidental" class=" py-2 space-y-2">
+                            <li>
+                                <a href="#clicar-opcao1-peticaoincidental" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Irá clicar em Petições</a>
+                            </li>
+                            <li>
+                                <a href="#clicar-opcao2-peticaoincidental" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Clicar na opção Nova Incidental</a>
+                            </li>
+                            <li>
+                                <a href="#clicar-opcao3-peticaoincidental" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">3. Preencher o Formulário</a>
+                            </li>
+                            <li>
+                                <a href="#clicar-opcao4-peticaoincidental" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">4. Adicionando novo arquivo</a>
+                            </li>
+                            <li>
+                                <a href="#clicar-opcao5-peticaoincidental" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">5. Enviar Petição Incidental</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-representantes" data-collapse-toggle="dropdown-representantes">
+                            <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                            </svg>
+                            <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como acessar os Representantes</span>
+                        </button>
+                        <ul id="dropdown-representantes" class=" py-2 space-y-2">
+                            <li>
+                                <a href="#menu-representantes1" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Gerenciar Representantes</a>
+                            </li>
+                            <li>
+                                <a href="#menu-representantes2" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Menu de representantes</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-novo-representante" data-collapse-toggle="dropdown-novo-representante">
+                            <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                            </svg>
+                            <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Adicionando um novo Representante</span>
+                        </button>
+                        <ul id="dropdown-novo-representante" class=" py-2 space-y-2">
+                            <li>
+                                <a href="#adicionar-representante1" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Como adicionar um representante</a>
+                            </li>
+                            <li>
+                                <a href="#adicionar-representante2" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Preencher Formulário de Adicionar Representante</a>
+                            </li>
+                            <li>
+                                <a href="#adicionar-representante3" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">3. Clicar em Enviar para Adicionar esse Representante</a>
+                            </li>
+                            <li>
+                                <a href="#adicionar-representante4" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">4. Menu de Representantes</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-consultar-processos" data-collapse-toggle="dropdown-consultar-processos">
+                            <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                            </svg>
+                            <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Como consultar seus Processos</span>
+                        </button>
+                        <ul id="dropdown-consultar-processos" class=" py-2 space-y-2">
+                            <li>
+                                <a href="#consultar-processos1" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1. Consultar Processos</a>
+                            </li>
+                            <li>
+                                <a href="#consultar-processos2" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">2. Menu Inicial</a>
+                            </li>
+                            <li>
+                                <a href="#consultar-processos3" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">3. Aba de Meus Processos Administrativos</a>
+                            </li>
+                            <li>
+                                <a href="#consultar-processos4" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">4. Aba de Minhas Petições</a>
+                                <li>
+                                    <a href="#consultar-processos5" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">5. Aba de Minhas Incidentais</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">6. Aba de Assinaturas Pendentes</a>
+                                </li>
+                                
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    
+        
+    
+        <main class="flex-1 p-4 sm:ml-[200px] lg:ml-[400px] bg-white">
+            
+               
+           
+          
+            
+            
+            <section id="acessar-site-peticionamento" class="max-w-3xl mx-auto px-4 py-8 mt-9 ">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-acessar-site" data-collapse-toggle="dropdown-content-acessar-site">
+                        <h2 class="text-3xl font-bold text-gray-800 flex items-center">
+                            <svg class="w-6 h-6 mr-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                            ✔️ Como acessar o Site de Peticionamento Eletrônico
+                        </h2>
+                    </button>
+                    
+                    <div id="dropdown-content-acessar-site" class="p-6 border-t border-gray-200 ">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-700">
+                            1. Entrar no site de Peticionamento Eletrônico
+                        </h3>
+                        <p class="mb-4 text-left" >
+                            <a href="https://peticionamento.mpap.mp.br/site/" 
+                               target="_blank" 
+                               rel="noopener noreferrer nofollow" 
+                               class="text-blue-600 hover:underline text-lg">
+                                https://peticionamento.mpap.mp.br/site/
+                            </a>
+                        </p>
+                        <p class="mb-6 text-left text-gray-600" >Entrar com seu certificado</p>
+                        <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/a7482bc5-65e0-431b-b619-072f46e8d73c/e9c9484d-5d41-45ac-99a3-7e0b6e1e74d9.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.2644&fp-y=0.3998&fp-z=2.1543&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=388&mark-y=314&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz00MjQmaD0xMTQmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
+                             alt="Entrar no site de Peticionamento Eletrônico" 
                              class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
-                             style="border-radius: 8px; border: 1px solid #F4F2F7;" />
+                        />
                     </div>
-                    <hr class="my-8 border-t border-gray-200">
-
-                    <!-- Outros itens do conteúdo aqui -->
-                    <div class="mb-8" id="clicar-opcao2-peticao">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-700">2. Clicar na opção NOVA PETIÇÃO</h3>
-                        <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/277aca66-8ea7-498f-b7e9-a8fc1a4ec196/e823741d-9e7d-459f-8e34-a37bbbd43788.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.4700&fp-y=0.0564&fp-z=2.2339&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=402&mark-y=66&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0zOTYmaD00OSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
-                             alt="Clicar na opção NOVA PETIÇÃO" 
-                             class="w-full max-w-2xl mx-auto rounded-lg shadow-md border-2 border-F4F2F7 border-radius-8 border-radius-inner-8" />
+                </div>
+            </section>
+    
+            <section id="criar-nova-peticao" class="max-w-3xl mx-auto px-4 py-8 mt-8">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-nova-peticao" data-collapse-toggle="dropdown-content-nova-peticao">
+                        <h2 class="text-3xl font-bold text-gray-800 flex items-center">
+                            <svg class="w-6 h-6 mr-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                            ✔️ Como criar uma NOVA PETIÇÃO
+                        </h2>
+                    </button>
+                    
+                    <div id="dropdown-content-nova-peticao" class="p-6 border-t border-gray-200">
+                        <div class="mb-8" id="clicar-opcao1-peticao">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-700">1. Irá clicar em Petições</h3>
+                            <p class="mb-4 text-gray-600" >Para criar uma nova petição, você irá na barra de navegação e clicar em petições</p>
+                            <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/c9f99aff-7ac7-4c2d-9e49-056ef8bc55d5/c46f595d-d2f1-49b6-b622-4cfac03c6329.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.3881&fp-y=0.0294&fp-z=2.7021&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=486&mark-y=8&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yMjcmaD0xMDEmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
+                                 alt="Irá clicar em Petições" 
+                                 class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                                 style="border-radius: 8px; border: 1px solid #F4F2F7;" />
+                        </div>
+                        <hr class="my-8 border-t border-gray-200">
+    
+                        <!-- Outros itens do conteúdo aqui -->
+                        <div class="mb-8" id="clicar-opcao2-peticao">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-700">2. Clicar na opção NOVA PETIÇÃO</h3>
+                            <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/277aca66-8ea7-498f-b7e9-a8fc1a4ec196/e823741d-9e7d-459f-8e34-a37bbbd43788.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.4700&fp-y=0.0564&fp-z=2.2339&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=402&mark-y=66&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0zOTYmaD00OSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
+                                 alt="Clicar na opção NOVA PETIÇÃO" 
+                                 class="w-full max-w-2xl mx-auto rounded-lg shadow-md border-2 border-F4F2F7 border-radius-8 border-radius-inner-8" />
+                        </div>
+    
+                        <hr class="my-8 border-t border-gray-200">
+    
+                        <div class="mb-8" id="clicar-opcao3-peticao">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-700">3. Preencher o formulario de nova petição</h3>
+                            <p class="mb-4 text-gray-600">Aqui você irá preencher o formulário da petição, colocando as informações abaixo</p>
+                            <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/e1c8df5d-23de-48c7-b022-1bb5115ddede/830884b0-0762-4dc8-8ac2-a3948a188736.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5003&fp-y=0.2917&fp-z=1.0349&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=21&mark-y=206&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTU5Jmg9MzcmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" class="w-full max-w-2xl mx-auto rounded-lg shadow-md border-2 border-F4F2F7 border-radius-8 border-radius-inner-8" width="600" alt="Preencher o formulario de nova petição" />
+                            
                     </div>
-
+    
                     <hr class="my-8 border-t border-gray-200">
-
-                    <div class="mb-8" id="clicar-opcao3-peticao">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-700">3. Preencher o formulario de nova petição</h3>
-                        <p class="mb-4 text-gray-600">Aqui você irá preencher o formulário da petição, colocando as informações abaixo</p>
-                        <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/e1c8df5d-23de-48c7-b022-1bb5115ddede/830884b0-0762-4dc8-8ac2-a3948a188736.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5003&fp-y=0.2917&fp-z=1.0349&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=21&mark-y=206&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTU5Jmg9MzcmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" class="w-full max-w-2xl mx-auto rounded-lg shadow-md border-2 border-F4F2F7 border-radius-8 border-radius-inner-8" width="600" alt="Preencher o formulario de nova petição" />
+    
+                    <div class="mb-8" id="clicar-opcao4-peticao">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-700">4. Enviar Petição</h3>
+                        <p class="mb-4 text-gray-600">Após o preenchimento, você poderá enviar essa petição</p>
+                        <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/a7157a87-b998-444a-a64c-51a80122caf8/10c9bc7a-242b-4bbb-b393-c4f5c17db793.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.0756&fp-y=0.7272&fp-z=2.6061&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=106&mark-y=324&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yNjImaD05MyZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" class="w-full max-w-2xl mx-auto rounded-lg shadow-md border-2 border-F4F2F7 border-radius-8 border-radius-inner-8" width="600" alt="Preencher o formulario de nova petição" />
                         
                 </div>
-
-                <hr class="my-8 border-t border-gray-200">
-
-                <div class="mb-8" id="clicar-opcao4-peticao">
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">4. Enviar Petição</h3>
-                    <p class="mb-4 text-gray-600">Após o preenchimento, você poderá enviar essa petição</p>
-                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/a7157a87-b998-444a-a64c-51a80122caf8/10c9bc7a-242b-4bbb-b393-c4f5c17db793.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.0756&fp-y=0.7272&fp-z=2.6061&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=106&mark-y=324&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yNjImaD05MyZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" class="w-full max-w-2xl mx-auto rounded-lg shadow-md border-2 border-F4F2F7 border-radius-8 border-radius-inner-8" width="600" alt="Preencher o formulario de nova petição" />
+                </div>
+            </section>
+    
+            <section id="nova-peticao-incidental" class="max-w-3xl mx-auto px-4 py-8 mt-8">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-nova-peticao-incidental" data-collapse-toggle="dropdown-content-nova-peticao-incidental">
+                        <h2 class="text-3xl font-bold text-gray-800 flex items-center">
+                            <svg class="w-6 h-6 mr-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                            ✔️ Como fazer NOVA PETIÇÃO INCIDENTAL
+                        </h2>
+                    </button>
                     
-            </div>
-            </div>
-        </section>
-
-        <section id="nova-peticao-incidental" class="max-w-3xl mx-auto px-4 py-8 mt-8">
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-nova-peticao-incidental" data-collapse-toggle="dropdown-content-nova-peticao-incidental">
-                    <h2 class="text-3xl font-bold text-gray-800 flex items-center">
-                        <svg class="w-6 h-6 mr-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                        ✔️ Como fazer NOVA PETIÇÃO INCIDENTAL
-                    </h2>
-                </button>
-                
-                <div id="dropdown-content-nova-peticao-incidental" class="p-6 border-t border-gray-200 " >
-                    <div class="mb-8" id="clicar-opcao1-peticaoincidental">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-700" id="clicar-opcao2-peticaoincidental">1. Irá clicar em Petições</h3>
-                        <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/a18ca812-604a-43a5-9497-4f9a67a16b3c/ee465d2f-70e0-4b9b-a0bd-a8ba8a673ec5.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.4209&fp-y=0.0213&fp-z=2.8611&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=515&mark-y=6&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xNzAmaD03NiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
-                             alt="Irá clicar em Petições" 
-                             class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
-                             style="border-radius: 8px; border: 1px solid #F4F2F7;" />
-                    </div>
-                    <hr class="my-8 border-t border-gray-200">
-
-                    <div class="mb-8" id="clicar-opcao2-peticaoincidental">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-700">2. Clicar na opção Nova Incidental - Em processo de terceiros</h3>
-                        <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/57527d40-4218-457f-ad7a-d5e90ecd549f/4b7446f5-eddc-406f-a9bc-8b4bbc7dded5.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.4700&fp-y=0.0807&fp-z=2.2339&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=402&mark-y=106&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0zOTYmaD00OSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
-                             alt="Clicar na opção Nova Incidental - Em processo de terceiros" 
-                             class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
-                             style="border-radius: 8px; border: 1px solid #F4F2F7;" />
-                    </div>
-                    <hr class="my-8 border-t border-gray-200">
-                    
-                    <div class="mb-8" id="clicar-opcao3-peticaoincidental">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-700">3. Preencher o Formulário</h3>
-                        <ul class="list-disc pl-5 mb-4 text-gray-600">
-                            <li>Selecionar o tipo de processo e colocar o numero do processo</li>
-                            <li>Clicar em Proximo Passo</li>
-                        </ul>
-                        <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/4d9dd952-67ca-4618-adf2-1204bf375c29/f7545225-685a-42d5-8103-69badf8e80e5.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.0712&fp-z=1.0018&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=1&mark-y=29&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTk4Jmg9NDUmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
-                             alt="Preencher o Formulário" 
-                             class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
-                             style="border-radius: 8px; border: 1px solid #F4F2F7;" />
-                    </div>
-                    <hr class="my-8 border-t border-gray-200">
-
-                    <div class="mb-8" id="clicar-opcao4-peticaoincidental">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-700">4. Adicionando novo arquivo</h3>
-                        <ul class="list-disc pl-5 mb-4 text-gray-600">
-                            <li>Você irá selecionar o novo arquivo</li>
-                        </ul>
-                        <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/dec06d76-7a46-4485-9c11-5e9749ee0b4b/d1a7fd2a-e062-4e54-ad24-b85c054d0089.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.0712&fp-z=1.0018&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=1&mark-y=29&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTk4Jmg9NDUmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
-                             alt="Adicionando novo arquivo" 
-                             class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
-                             style="border-radius: 8px; border: 1px solid #F4F2F7;" />
-                    </div>
-                    <hr class="my-8 border-t border-gray-200">
-
-                    <div class="mb-8" id="clicar-opcao5-peticaoincidental">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-700">5. Enviar Petição Incidental</h3>
-                        <ul class="list-disc pl-5 mb-4 text-gray-600">
-                            <li>Irá clicar para enviar a Petição Incidental</li>
-                        </ul>
-                        <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/8a7aec3e-08b9-42d7-bc4c-89220a5818aa/9459a1bd-c16e-4dc4-b1f8-e30f51c80646.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.0695&fp-y=0.5986&fp-z=2.5560&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=73&mark-y=329&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yODAmaD02NSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
-                             alt="Enviar Petição Incidental" 
-                             class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
-                             style="border-radius: 8px; border: 1px solid #F4F2F7;" />
+                    <div id="dropdown-content-nova-peticao-incidental" class="p-6 border-t border-gray-200 " >
+                        <div class="mb-8" id="clicar-opcao1-peticaoincidental">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-700" id="clicar-opcao2-peticaoincidental">1. Irá clicar em Petições</h3>
+                            <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/a18ca812-604a-43a5-9497-4f9a67a16b3c/ee465d2f-70e0-4b9b-a0bd-a8ba8a673ec5.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.4209&fp-y=0.0213&fp-z=2.8611&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=515&mark-y=6&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xNzAmaD03NiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
+                                 alt="Irá clicar em Petições" 
+                                 class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                                 style="border-radius: 8px; border: 1px solid #F4F2F7;" />
+                        </div>
+                        <hr class="my-8 border-t border-gray-200">
+    
+                        <div class="mb-8" id="clicar-opcao2-peticaoincidental">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-700">2. Clicar na opção Nova Incidental - Em processo de terceiros</h3>
+                            <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/57527d40-4218-457f-ad7a-d5e90ecd549f/4b7446f5-eddc-406f-a9bc-8b4bbc7dded5.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.4700&fp-y=0.0807&fp-z=2.2339&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=402&mark-y=106&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0zOTYmaD00OSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
+                                 alt="Clicar na opção Nova Incidental - Em processo de terceiros" 
+                                 class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                                 style="border-radius: 8px; border: 1px solid #F4F2F7;" />
+                        </div>
+                        <hr class="my-8 border-t border-gray-200">
+                        
+                        <div class="mb-8" id="clicar-opcao3-peticaoincidental">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-700">3. Preencher o Formulário</h3>
+                            <ul class="list-disc pl-5 mb-4 text-gray-600">
+                                <li>Selecionar o tipo de processo e colocar o numero do processo</li>
+                                <li>Clicar em Proximo Passo</li>
+                            </ul>
+                            <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/4d9dd952-67ca-4618-adf2-1204bf375c29/f7545225-685a-42d5-8103-69badf8e80e5.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.0712&fp-z=1.0018&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=1&mark-y=29&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTk4Jmg9NDUmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
+                                 alt="Preencher o Formulário" 
+                                 class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                                 style="border-radius: 8px; border: 1px solid #F4F2F7;" />
+                        </div>
+                        <hr class="my-8 border-t border-gray-200">
+    
+                        <div class="mb-8" id="clicar-opcao4-peticaoincidental">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-700">4. Adicionando novo arquivo</h3>
+                            <ul class="list-disc pl-5 mb-4 text-gray-600">
+                                <li>Você irá selecionar o novo arquivo</li>
+                            </ul>
+                            <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/dec06d76-7a46-4485-9c11-5e9749ee0b4b/d1a7fd2a-e062-4e54-ad24-b85c054d0089.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.0712&fp-z=1.0018&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=1&mark-y=29&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTk4Jmg9NDUmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
+                                 alt="Adicionando novo arquivo" 
+                                 class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                                 style="border-radius: 8px; border: 1px solid #F4F2F7;" />
+                        </div>
+                        <hr class="my-8 border-t border-gray-200">
+    
+                        <div class="mb-8" id="clicar-opcao5-peticaoincidental">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-700">5. Enviar Petição Incidental</h3>
+                            <ul class="list-disc pl-5 mb-4 text-gray-600">
+                                <li>Irá clicar para enviar a Petição Incidental</li>
+                            </ul>
+                            <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/8a7aec3e-08b9-42d7-bc4c-89220a5818aa/9459a1bd-c16e-4dc4-b1f8-e30f51c80646.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.0695&fp-y=0.5986&fp-z=2.5560&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=73&mark-y=329&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yODAmaD02NSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
+                                 alt="Enviar Petição Incidental" 
+                                 class="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                                 style="border-radius: 8px; border: 1px solid #F4F2F7;" />
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-       
-        
-<section id="acessar-representantes" class="max-w-3xl mx-auto px-4 py-8 mt-8">
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-acessar-representantes" data-collapse-toggle="dropdown-content-acessar-representantes">
-            <h2 class="text-3xl font-bold text-gray-800 flex items-center">
-                <svg class="w-6 h-6 mr-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                
-                <a href="#acessar-site-peticionamento" class="...">✔️ Como acessar os Representantes</a>
-            </h2>
-        </button>
-        
-        <div id="dropdown-content-acessar-representantes" class="p-6 border-t border-gray-200 ">
-            <div class="mb-8" id="menu-representantes1">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">1. Gerenciar Representantes</h3>
-                <p class="mb-4 text-gray-600">Para conseguir acessar os representantes, você irá clicar em representantes.</p>
-                <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/a8ece1d7-5c43-403b-8193-652a71a57baf/ece0ed65-1d94-4c4e-97d8-3ba7eac090e1.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5730&fp-y=0.0294&fp-z=2.5416&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=457&mark-y=8&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yODUmaD05NSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
-                     style="border-radius: 8px; border: 1px solid #F4F2F7;" 
-                     class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
-                     alt="Gerenciar Representantes" />
-            </div>
-
-            <hr class="my-8 border-t border-gray-200">
-
-            <div class="mb-8" id="menu-representantes2">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">2. Menu de representantes</h3>
-                <p class="mb-4 text-gray-600">Irá mostrar seus representantes,</p>
-                <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/3ddd43f6-d4a1-43a3-a937-b06151452b9c/fcb6e35b-582d-48fd-a641-cb16fe15b5f8.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5003&fp-y=0.2943&fp-z=1.0078&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=4&mark-y=99&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTkxJmg9MjQzJmZpdD1jcm9wJmNvcm5lci1yYWRpdXM9MTA%3D" 
-                     style="border-radius: 8px; border: 1px solid #F4F2F7;" 
-                     class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
-                     alt="Menu de representantes" />
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="adicionar-novo-representante" class="max-w-3xl mx-auto px-4 py-8 mt-8">
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-adicionar-representante" data-collapse-toggle="dropdown-content-adicionar-representante">
-            <h2 class="text-3xl font-bold text-gray-800 flex items-center">
-                <svg class="w-6 h-6 mr-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                ✔️ Adicionando um novo Representante
-            </h2>
-        </button>
-        
-        <div id="dropdown-content-adicionar-representante" class="p-6 border-t border-gray-200 ">
-            <div class="mb-8" id="adicionar-representante1">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">1. Como adicionar um representante</h3>
-                <p class="mb-4 text-gray-600">Você irá clicar em Adicionar Representante</p>
-                <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/85d85524-ed25-4610-85c8-75c26802dcda/0da567a5-89f2-4518-9729-82636a520de6.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.1856&fp-y=0.1737&fp-z=2.4371&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=381&mark-y=277&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0zMjMmaD03NCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
-                     style="border-radius: 8px; border: 1px solid #F4F2F7;" 
-                     class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
-                     alt="Como adicionar um representante" />
-            </div>
-
-            <hr class="my-8 border-t border-gray-200">
-
-            <div class="mb-8" id="adicionar-representante2">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">2. Preencher Formulario de Adicionar Representante</h3>
-                <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/79ab9bcd-c380-4012-b811-c9be25b14a0d/7a0dcfe1-fcae-4026-aa2e-7cca9ee99128.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.4998&fp-y=0.5248&fp-z=1.0018&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=1&mark-y=63&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTk3Jmg9NjMxJmZpdD1jcm9wJmNvcm5lci1yYWRpdXM9MTA%3D" 
-                     style="border-radius: 8px; border: 1px solid #F4F2F7;" 
-                     class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
-                     alt="Preencher Formulario de Adicionar Representante" />
-            </div>
-
-            <hr class="my-8 border-t border-gray-200">
-
-            <div class="mb-8" id="adicionar-representante3">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">3. Clicar em Enviar para Adicionar esse Representante</h3>
-                <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/ff271675-dab0-426c-bf29-832d8e60e5c3/bad45e0d-c41f-4227-9939-4c31970da97b.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.0454&fp-y=0.8825&fp-z=2.8627&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=71&mark-y=441&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xNjkmaD0xMDMmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
-                     style="border-radius: 8px; border: 1px solid #F4F2F7;" 
-                     class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
-                     alt="Clicar em Enviar para Adicionar esse Representante" />
-            </div>
-
-            <hr class="my-8 border-t border-gray-200">
-
-            <div class="mb-8" id="adicionar-representante4">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">4. Menu de Representantes</h3>
-                <p class="mb-4 text-gray-600">Agora em seu Menu, irá mostrar seus representantes, tendo a opção de excluir e adicionar outros representantes</p>
-                <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/40e84aff-5481-4989-8317-9ce80123ab34/d1e752de-79e7-4e0f-a3d5-14ca1d7562ea.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5003&fp-y=0.2980&fp-z=1.0078&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=4&mark-y=99&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTkxJmg9MjQ4JmZpdD1jcm9wJmNvcm5lci1yYWRpdXM9MTA%3D" 
-                     style="border-radius: 8px; border: 1px solid #F4F2F7;" 
-                     class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
-                     alt="Menu de Representantes" />
+            </section>
+    
+           
+            
+    <section id="acessar-representantes" class="max-w-3xl mx-auto px-4 py-8 mt-8">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-acessar-representantes" data-collapse-toggle="dropdown-content-acessar-representantes">
+                <h2 class="text-3xl font-bold text-gray-800 flex items-center">
+                    <svg class="w-6 h-6 mr-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    
+                    <a href="#acessar-site-peticionamento" class="...">✔️ Como acessar os Representantes</a>
+                </h2>
+            </button>
+            
+            <div id="dropdown-content-acessar-representantes" class="p-6 border-t border-gray-200 ">
+                <div class="mb-8" id="menu-representantes1">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">1. Gerenciar Representantes</h3>
+                    <p class="mb-4 text-gray-600">Para conseguir acessar os representantes, você irá clicar em representantes.</p>
+                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/a8ece1d7-5c43-403b-8193-652a71a57baf/ece0ed65-1d94-4c4e-97d8-3ba7eac090e1.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5730&fp-y=0.0294&fp-z=2.5416&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=457&mark-y=8&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yODUmaD05NSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
+                         style="border-radius: 8px; border: 1px solid #F4F2F7;" 
+                         class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
+                         alt="Gerenciar Representantes" />
+                </div>
+    
+                <hr class="my-8 border-t border-gray-200">
+    
+                <div class="mb-8" id="menu-representantes2">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">2. Menu de representantes</h3>
+                    <p class="mb-4 text-gray-600">Irá mostrar seus representantes,</p>
+                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/3ddd43f6-d4a1-43a3-a937-b06151452b9c/fcb6e35b-582d-48fd-a641-cb16fe15b5f8.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5003&fp-y=0.2943&fp-z=1.0078&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=4&mark-y=99&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTkxJmg9MjQzJmZpdD1jcm9wJmNvcm5lci1yYWRpdXM9MTA%3D" 
+                         style="border-radius: 8px; border: 1px solid #F4F2F7;" 
+                         class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
+                         alt="Menu de representantes" />
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section id="consultar-processos" class="max-w-3xl mx-auto px-4 py-8 mt-8">
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-consultar-processos" data-collapse-toggle="dropdown-content-consultar-processos">
-            <h2 class="text-3xl font-bold text-gray-800 flex items-center">
-                <svg class="w-6 h-6 mr-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-                ✔️ Como consultar seus Processos
-            </h2>
-        </button>
-        
-        <div id="dropdown-content-consultar-processos" class="p-6 border-t border-gray-200 ">
-            <div class="mb-8" id="consultar-processos1">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">1. Consultar Processos</h3>
-                <p class="mb-4 text-gray-600">Para consultar processos, você terá que apertar na opção Inicio, que irá redirecionar, para a pagina inicial</p>
-                <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/0e62b7ed-e08a-4afb-86eb-a82ca8ea44b8/a80e838b-f1a4-4510-8322-97b75141f4ff.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.2592&fp-y=0.0294&fp-z=2.8541&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=514&mark-y=9&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xNzEmaD0xMDcmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
-                     style="border-radius: 8px; border: 1px solid #F4F2F7;" 
-                     class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
-                     alt="Consultar Processos" />
-            </div>
-
-            <hr class="my-8 border-t border-gray-200">
-
-            <div class="mb-8" id="consultar-processos2">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">2. Menu Inicial</h3>
-                <p class="mb-4 text-gray-600">Ao voltar para o menu Inicial, você terá acesso a todas as abas de informações de suas petições</p>
-                <ul class="list-disc pl-5 mb-4 text-gray-600">
-                    <li>Meus Processos Administrativos</li>
-                    <li>Minhas Petições</li>
-                    <li>Minhas Incidentais</li>
-                    <li>Assinaturas Pendentes</li>
-                </ul>
-                <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/eba05961-25e0-45b9-8240-4ce4662d3e8b/87b7a378-1478-4b48-9453-b86921476592.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.4935&fp-z=1.0018&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=1&mark-y=29&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTk4Jmg9NjU2JmZpdD1jcm9wJmNvcm5lci1yYWRpdXM9MTA%3D" 
-                     style="border-radius: 8px; border: 1px solid #F4F2F7;" 
-                     class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
-                     alt="Menu Inicial" />
-            </div>
-
-            <hr class="my-8 border-t border-gray-200">
-
-            <div class="mb-8" id="consultar-processos3">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">3. Aba de Meus Processos Administrativos</h3>
-                <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/ed2403c9-22ba-4e36-81c0-6e3a12a96d4f/ca68f769-5397-4204-8988-4ff902efe0df.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.2502&fp-y=0.3179&fp-z=2.1483&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=387&mark-y=329&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz00MjcmaD04NCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
-                     style="border-radius: 8px; border: 1px solid #F4F2F7;" 
-                     class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
-                     alt="Aba de Meus Processos Administrativos" />
-            </div>
-
-            <hr class="my-8 border-t border-gray-200">
-
-            <div class="mb-8" id="consultar-processos4">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">4. Aba de Minhas Petições</h3>
-                <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/5f1189c1-a96b-4718-b117-c0ed37978309/9ec317a2-b0c7-4cca-bd25-24b9f8deb89f.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.3761&fp-y=0.3179&fp-z=2.5209&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=454&mark-y=322&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yOTImaD05OCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
-                     style="border-radius: 8px; border: 1px solid #F4F2F7;" 
-                     class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
-                     alt="Aba de Minhas Petições" />
-            </div>
-
-            <hr class="my-8 border-t border-gray-200">
-
-            <div class="mb-8" id="consultar-processos5" >
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">5. Aba de Minhas Incidentais</h3>
-                <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/067171f6-6db6-4bf4-843c-e37bf07c52b9/341a5b4d-cf84-42d8-a241-aaa1ccac055f.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.4734&fp-y=0.3179&fp-z=2.4488&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=441&mark-y=323&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0zMTgmaD05NSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
-                     style="border-radius: 8px; border: 1px solid #F4F2F7;" 
-                     class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
-                     alt="Aba de Minhas Incidentais" />
-            </div>
-
-            <hr class="my-8 border-t border-gray-200">
-
-            <div class="mb-8" id="consultar-processos6">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">6. Aba de Assinaturas Pendentes</h3>
-                <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/125f1d7e-a562-4f5c-8065-652d1c6e4c35/c3337922-2c6d-4275-8941-879f4ac29790.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5850&fp-y=0.3179&fp-z=2.3516&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=423&mark-y=325&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0zNTMmaD05MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
-                     style="border-radius: 8px; border: 1px solid #F4F2F7;" 
-                     class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
-                     alt="Aba de Assinaturas Pendentes" />
+    </section>
+    
+    <section id="adicionar-novo-representante" class="max-w-3xl mx-auto px-4 py-8 mt-8">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-adicionar-representante" data-collapse-toggle="dropdown-content-adicionar-representante">
+                <h2 class="text-3xl font-bold text-gray-800 flex items-center">
+                    <svg class="w-6 h-6 mr-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    ✔️ Adicionando um novo Representante
+                </h2>
+            </button>
+            
+            <div id="dropdown-content-adicionar-representante" class="p-6 border-t border-gray-200 ">
+                <div class="mb-8" id="adicionar-representante1">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">1. Como adicionar um representante</h3>
+                    <p class="mb-4 text-gray-600">Você irá clicar em Adicionar Representante</p>
+                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/85d85524-ed25-4610-85c8-75c26802dcda/0da567a5-89f2-4518-9729-82636a520de6.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.1856&fp-y=0.1737&fp-z=2.4371&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=381&mark-y=277&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0zMjMmaD03NCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
+                         style="border-radius: 8px; border: 1px solid #F4F2F7;" 
+                         class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
+                         alt="Como adicionar um representante" />
+                </div>
+    
+                <hr class="my-8 border-t border-gray-200">
+    
+                <div class="mb-8" id="adicionar-representante2">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">2. Preencher Formulario de Adicionar Representante</h3>
+                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/79ab9bcd-c380-4012-b811-c9be25b14a0d/7a0dcfe1-fcae-4026-aa2e-7cca9ee99128.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.4998&fp-y=0.5248&fp-z=1.0018&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=1&mark-y=63&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTk3Jmg9NjMxJmZpdD1jcm9wJmNvcm5lci1yYWRpdXM9MTA%3D" 
+                         style="border-radius: 8px; border: 1px solid #F4F2F7;" 
+                         class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
+                         alt="Preencher Formulario de Adicionar Representante" />
+                </div>
+    
+                <hr class="my-8 border-t border-gray-200">
+    
+                <div class="mb-8" id="adicionar-representante3">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">3. Clicar em Enviar para Adicionar esse Representante</h3>
+                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/ff271675-dab0-426c-bf29-832d8e60e5c3/bad45e0d-c41f-4227-9939-4c31970da97b.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.0454&fp-y=0.8825&fp-z=2.8627&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=71&mark-y=441&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xNjkmaD0xMDMmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
+                         style="border-radius: 8px; border: 1px solid #F4F2F7;" 
+                         class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
+                         alt="Clicar em Enviar para Adicionar esse Representante" />
+                </div>
+    
+                <hr class="my-8 border-t border-gray-200">
+    
+                <div class="mb-8" id="adicionar-representante4">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">4. Menu de Representantes</h3>
+                    <p class="mb-4 text-gray-600">Agora em seu Menu, irá mostrar seus representantes, tendo a opção de excluir e adicionar outros representantes</p>
+                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/40e84aff-5481-4989-8317-9ce80123ab34/d1e752de-79e7-4e0f-a3d5-14ca1d7562ea.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5003&fp-y=0.2980&fp-z=1.0078&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=4&mark-y=99&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTkxJmg9MjQ4JmZpdD1jcm9wJmNvcm5lci1yYWRpdXM9MTA%3D" 
+                         style="border-radius: 8px; border: 1px solid #F4F2F7;" 
+                         class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
+                         alt="Menu de Representantes" />
+                </div>
             </div>
         </div>
+    </section>
+    
+    <section id="consultar-processos" class="max-w-3xl mx-auto px-4 py-8 mt-8">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-consultar-processos" data-collapse-toggle="dropdown-content-consultar-processos">
+                <h2 class="text-3xl font-bold text-gray-800 flex items-center">
+                    <svg class="w-6 h-6 mr-2 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    ✔️ Como consultar seus Processos
+                </h2>
+            </button>
+            
+            <div id="dropdown-content-consultar-processos" class="p-6 border-t border-gray-200 ">
+                <div class="mb-8" id="consultar-processos1">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">1. Consultar Processos</h3>
+                    <p class="mb-4 text-gray-600">Para consultar processos, você terá que apertar na opção Inicio, que irá redirecionar, para a pagina inicial</p>
+                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/0e62b7ed-e08a-4afb-86eb-a82ca8ea44b8/a80e838b-f1a4-4510-8322-97b75141f4ff.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.2592&fp-y=0.0294&fp-z=2.8541&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=514&mark-y=9&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xNzEmaD0xMDcmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
+                         style="border-radius: 8px; border: 1px solid #F4F2F7;" 
+                         class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
+                         alt="Consultar Processos" />
+                </div>
+    
+                <hr class="my-8 border-t border-gray-200">
+    
+                <div class="mb-8" id="consultar-processos2">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">2. Menu Inicial</h3>
+                    <p class="mb-4 text-gray-600">Ao voltar para o menu Inicial, você terá acesso a todas as abas de informações de suas petições</p>
+                    <ul class="list-disc pl-5 mb-4 text-gray-600">
+                        <li>Meus Processos Administrativos</li>
+                        <li>Minhas Petições</li>
+                        <li>Minhas Incidentais</li>
+                        <li>Assinaturas Pendentes</li>
+                    </ul>
+                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/eba05961-25e0-45b9-8240-4ce4662d3e8b/87b7a378-1478-4b48-9453-b86921476592.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.4935&fp-z=1.0018&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=1&mark-y=29&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xMTk4Jmg9NjU2JmZpdD1jcm9wJmNvcm5lci1yYWRpdXM9MTA%3D" 
+                         style="border-radius: 8px; border: 1px solid #F4F2F7;" 
+                         class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
+                         alt="Menu Inicial" />
+                </div>
+    
+                <hr class="my-8 border-t border-gray-200">
+    
+                <div class="mb-8" id="consultar-processos3">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">3. Aba de Meus Processos Administrativos</h3>
+                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/ed2403c9-22ba-4e36-81c0-6e3a12a96d4f/ca68f769-5397-4204-8988-4ff902efe0df.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.2502&fp-y=0.3179&fp-z=2.1483&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=387&mark-y=329&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz00MjcmaD04NCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
+                         style="border-radius: 8px; border: 1px solid #F4F2F7;" 
+                         class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
+                         alt="Aba de Meus Processos Administrativos" />
+                </div>
+    
+                <hr class="my-8 border-t border-gray-200">
+    
+                <div class="mb-8" id="consultar-processos4">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">4. Aba de Minhas Petições</h3>
+                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/5f1189c1-a96b-4718-b117-c0ed37978309/9ec317a2-b0c7-4cca-bd25-24b9f8deb89f.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.3761&fp-y=0.3179&fp-z=2.5209&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=454&mark-y=322&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yOTImaD05OCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
+                         style="border-radius: 8px; border: 1px solid #F4F2F7;" 
+                         class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
+                         alt="Aba de Minhas Petições" />
+                </div>
+    
+                <hr class="my-8 border-t border-gray-200">
+    
+                <div class="mb-8" id="consultar-processos5" >
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">5. Aba de Minhas Incidentais</h3>
+                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/067171f6-6db6-4bf4-843c-e37bf07c52b9/341a5b4d-cf84-42d8-a241-aaa1ccac055f.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.4734&fp-y=0.3179&fp-z=2.4488&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=441&mark-y=323&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0zMTgmaD05NSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
+                         style="border-radius: 8px; border: 1px solid #F4F2F7;" 
+                         class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
+                         alt="Aba de Minhas Incidentais" />
+                </div>
+    
+                <hr class="my-8 border-t border-gray-200">
+    
+                <div class="mb-8" id="consultar-processos6">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700">6. Aba de Assinaturas Pendentes</h3>
+                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/125f1d7e-a562-4f5c-8065-652d1c6e4c35/c3337922-2c6d-4275-8941-879f4ac29790.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.5850&fp-y=0.3179&fp-z=2.3516&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=423&mark-y=325&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0zNTMmaD05MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw" 
+                         style="border-radius: 8px; border: 1px solid #F4F2F7;" 
+                         class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
+                         alt="Aba de Assinaturas Pendentes" />
+                </div>
+            </div>
+        </div>
+    </section>
+            
+        </main>
     </div>
-</section>
-        
-    </main>
-</div>
+   </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-    const dropdowns = document.querySelectorAll('[data-collapse-toggle]');
+        const dropdowns = document.querySelectorAll('[data-collapse-toggle]');
 
-    dropdowns.forEach(dropdown => {
-        const dropdownToggle = dropdown;
-        const dropdownContent = document.getElementById(dropdown.getAttribute('aria-controls'));
-        const dropdownIcon = dropdownToggle.querySelector('svg');
+        dropdowns.forEach(dropdown => {
+            const dropdownToggle = dropdown;
+            const dropdownContent = document.getElementById(dropdown.getAttribute('aria-controls'));
+            const dropdownIcon = dropdownToggle.querySelector('svg');
 
-        dropdownToggle.addEventListener('click', function() {
-            dropdownContent.classList.toggle('hidden');
-            dropdownIcon.classList.toggle('rotate-180');
+            dropdownToggle.addEventListener('click', function() {
+                dropdownContent.classList.toggle('hidden');
+                dropdownIcon.classList.toggle('rotate-180');
+            });
         });
     });
-});
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+
+                        if (targetElement) {
+                            targetElement.classList.add('section-padding');
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+    
     </script>
 </body>
 </html>
