@@ -64,7 +64,88 @@
             .section-padding {
                 scroll-margin-top: 68px;
         } }
-        
+        @media (max-width: 768px) {
+        .navbar-custom {
+            left: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1rem;
+        }
+
+        .navbar-custom .container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .navbar-custom .flex-grow {
+            margin-bottom: 1rem;
+        }
+
+        .navbar-custom .flex.items-center {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .navbar-custom a {
+            margin-top: 0.5rem;
+            width: 100%;
+            text-align: left;
+        }
+    }
+
+    #sidebar-multi-level-sidebar {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+        #sidebar-multi-level-sidebar {
+            transform: translateX(-100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1001;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        #sidebar-multi-level-sidebar.show {
+            transform: translateX(0);
+        }
+
+        main {
+            margin-left: 0 !important;
+            padding-top: 120px; /* Ajuste conforme necessário */
+        }
+    }
+
+    .section-padding {
+        scroll-margin-top: 88px;
+    }
+
+    @media (max-width: 768px) {
+        .section-padding {
+            scroll-margin-top: 120px; /* Ajuste conforme a altura da navbar em telas pequenas */
+        }
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1002;
+            background-color: #f9fafb;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+        }
+    }
     </style>
 </head>
 <body>
@@ -600,6 +681,11 @@
                     });
                 });
     
+                document.addEventListener('click', function(event) {
+                if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+                    sidebar.classList.remove('show');
+                }
+            });
     </script>
 </body>
 </html>
