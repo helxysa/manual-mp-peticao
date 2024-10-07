@@ -7,25 +7,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <style>
-        /* Estiliza a barra de rolagem inteira */
         ::-webkit-scrollbar {
             width: 12px;
             margin-right: 4px
         }
 
-        /* Estiliza o "thumb" da barra de rolagem */
         ::-webkit-scrollbar-thumb {
             background-color: #a7a2a2;
             border-radius: 6px;
             border: 3px solid #fff;
         }
 
-        /* Estiliza o "track" da barra de rolagem */
         ::-webkit-scrollbar-track {
             background-color: #e0e0e0;
         }
 
-        /* Para Firefox */
         * {
             scrollbar-width: thin;
             scrollbar-color: #e7eaee #cbd5e0;
@@ -34,130 +30,181 @@
         position: fixed;
         top: 0;
         right: 0;
-        left: 200px; /* Largura da sidebar em telas menores */
+        left: 200px; 
         z-index: 1000;
         transition: left 0.3s ease;
-        background-color: #f9fafb; /* Cor de fundo da navbar */
+        background-color: #f9fafb; 
     }
 
-        @media (min-width: 1024px) {
-            .navbar-custom {
-                left: 400px; /* Largura da sidebar em telas maiores */
-            }
-        }
+    main {
+    padding-top: 80px;
+    margin: 130px;
+}
 
-        @media (max-width: 640px) {
-            .navbar-custom {
-                left: 0; /* Remove a margem em telas muito pequenas */
-            }
-        }
-
-        /* Adicione este estilo para ajustar o conteúdo principal */
-        main {
-            padding-top: 80px; 
-            margin: 130px;
-        }
-        .section-padding {
-            scroll-margin-top: 88px; 
-        }
-        @media (max-width: 640px) {
-            .section-padding {
-                scroll-margin-top: 68px;
-        } }
-        @media (max-width: 768px) {
-        .navbar-custom {
-            left: 0;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 1rem;
-        }
-
-        .navbar-custom .container {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .navbar-custom .flex-grow {
-            margin-bottom: 1rem;
-        }
-
-        .navbar-custom .flex.items-center {
-            flex-direction: column;
-            align-items: flex-start;
-            width: 100%;
-        }
-
-        .navbar-custom a {
-            margin-top: 0.5rem;
-            width: 100%;
-            text-align: left;
-        }
+    .section-padding {
+        scroll-margin-top: 88px;
     }
 
     #sidebar-multi-level-sidebar {
         transition: transform 0.3s ease-in-out;
     }
 
-    @media (max-width: 768px) {
-        #sidebar-multi-level-sidebar {
-            transform: translateX(-100%);
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            z-index: 1001;
-            width: 80%;
-            max-width: 300px;
-        }
-
-        #sidebar-multi-level-sidebar.show {
-            transform: translateX(0);
-        }
-
-        main {
-            margin-left: 0 !important;
-            padding-top: 120px; /* Ajuste conforme necessário */
-        }
-    }
-
-    .section-padding {
-        scroll-margin-top: 88px;
-    }
-
-    @media (max-width: 768px) {
-        .section-padding {
-            scroll-margin-top: 120px; /* Ajuste conforme a altura da navbar em telas pequenas */
-        }
-    }
-
     .menu-toggle {
         display: none;
     }
 
-    @media (max-width: 768px) {
-        .menu-toggle {
-            display: block;
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            z-index: 1002;
-            background-color: #f9fafb;
-            padding: 0.5rem;
-            border-radius: 0.25rem;
-        }
+/* Media queries */
+@media (min-width: 1024px) {
+    .navbar-custom {
+        left: 400px;
     }
+}
+
+@media (min-width: 1051px) {
+    #dropdownNavbarLink {
+        display: none;
+    }
+}
+
+@media (max-width: 1050px) {
+    #dropdownNavbarLink {
+        display: flex;
+    }
+
+    .navbar-custom .flex-col {
+        display: none;
+    }
+
+    .navbar-custom {
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .navbar-custom .container,
+    .navbar-custom .flex.items-center {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-custom .flex-grow {
+        margin-bottom: 1rem;
+    }
+
+    .navbar-custom a {
+        margin-top: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    #sidebar-multi-level-sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1001;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    #sidebar-multi-level-sidebar.show {
+        transform: translateX(0);
+    }
+    main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+   
+}
+
+   
+}
+
+@media (max-width: 768px) {
+    .navbar-custom {
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .navbar-custom .container,
+    .navbar-custom .flex.items-center {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-custom .flex-grow {
+        margin-bottom: 1rem;
+    }
+
+    .navbar-custom a {
+        margin-top: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    #sidebar-multi-level-sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1001;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    #sidebar-multi-level-sidebar.show {
+        transform: translateX(0);
+    }
+        
+    main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+} }
+
     </style>
 </head>
 <body>
    <div>
     <nav class="bg-gray-50 p-6 navbar-custom">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-4">
+      
+           
+            
+        
+        
+        <div class="hidden lg:flex items-center space-x-4">
+            <div class="container mx-30px flex justify-between items-center">
                 <span class="text-[#4C5C96] font-bold text-lg">MP - Manual de Peticionamento Eletrônico</span>
             </div>
-            <div class="flex items-center">
-                <a href="https://www.mpap.mp.br/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold">Acessar Portal-MP</a>
-                <a href="https://peticionamento.mpap.mp.br/site/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold">Acessar Peticionamento Eletrônico</a>
+            <a href="https://www.mpap.mp.br/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold">Acessar Portal-MP</a>
+            <a href="https://peticionamento.mpap.mp.br/site/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold">Acessar Peticionamento Eletrônico</a>
+        </div>
+            <!-- Dropdown para telas menores -->
+            <div class="lg:hidden">
+                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-bold text-[#4C5C96] hover:text-blue-200">
+                    MP - Manual de Peticionamento Eletronico
+                    <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdownNavbar" class="hidden z-10 w-44 font-normal bg-white rounded divide-y divide-gray-100 shadow">
+                    <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownNavbarLink">
+                        <li>
+                            <a href="https://www.mpap.mp.br/" target="_blank" class="block py-2 px-4 hover:bg-gray-100 text-[#4C5C96] font-bold">Acessar Portal-MP</a>
+                        </li>
+                        <li>
+                            <a href="https://peticionamento.mpap.mp.br/site/" target="_blank" class="block py-2 px-4 hover:bg-gray-100 text-[#4C5C96] font-bold">Acessar Peticionamento Eletrônico</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -686,6 +733,36 @@
                     sidebar.classList.remove('show');
                 }
             });
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+    const dropdownButton = document.getElementById('dropdownNavbarLink');
+    const dropdownMenu = document.getElementById('dropdownNavbar');
+
+    dropdownButton.addEventListener('click', function() {
+        dropdownMenu.classList.toggle('hidden');
+    });
+    document.addEventListener('click', function(event) {
+        if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.add('hidden');
+        }
+    });
+
+    function adjustNavbarItems() {
+        const regularMenu = document.getElementById('mobile-menu-2');
+        if (window.innerWidth <= 1050) {
+            regularMenu.classList.add('hidden');
+            dropdownButton.classList.remove('hidden');
+        } else {
+            regularMenu.classList.remove('hidden');
+            dropdownButton.classList.add('hidden');
+            dropdownMenu.classList.add('hidden');
+        }
+    }
+
+    adjustNavbarItems();
+    window.addEventListener('resize', adjustNavbarItems);
+});
     </script>
 </body>
 </html>
