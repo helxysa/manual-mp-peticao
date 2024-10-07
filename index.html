@@ -164,12 +164,114 @@
         transform: translateX(0);
     }
         
+    /* Media query para iPhone XR e dispositivos similares */
+@media screen and (max-width: 414px) {
+    /* Ajustes para a navbar */
+    .navbar-custom {
+        padding: 0.5rem;
+    }
+
+    .navbar-custom .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-custom span {
+        font-size: 0.9rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    #dropdownNavbarLink {
+        width: 100%;
+        justify-content: center;
+        padding: 0.5rem;
+    }
+
+    #dropdownNavbar {
+        width: 100%;
+    }
+
+    /* Ajustes para o main e suas seções */
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
     main {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-} }
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    main > section {
+        width: 100%;
+        max-width: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    main > section > * {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Ajusta imagens para serem responsivas e centralizadas */
+    main img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Centraliza o texto de cabeçalhos e parágrafos */
+    main h1, main h2, main h3, main p {
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Ajusta listas para ficarem alinhadas ao centro */
+    main ul, main ol {
+        display: inline-block;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+    }
+
+    /* Ajusta o tamanho das fontes */
+    main h1 {
+        font-size: 1.5rem;
+    }
+
+    main h2 {
+        font-size: 1.3rem;
+    }
+
+    main h3 {
+        font-size: 1.1rem;
+    }
+
+    main p, main li {
+        font-size: 0.9rem;
+    }
+
+    /* Ajusta o espaçamento entre elementos */
+  
+  
+}
+ }
 
     </style>
 </head>
