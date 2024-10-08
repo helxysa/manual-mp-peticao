@@ -52,8 +52,15 @@
     .menu-toggle {
         display: none;
     }
-
-
+    html {
+  scroll-behavior: smooth;
+}
+.anchor-offset {
+        display: block;
+        position: relative;
+        top: -150px; /* Ajuste este valor conforme necessário */
+        visibility: hidden;
+    }
     
 /* Media queries */
 @media (min-width: 1024px) {
@@ -341,6 +348,7 @@
     #sidebar-toggle {
         display: none;
     }
+} 
 }
 </style>
 </head>
@@ -754,7 +762,7 @@
     
                 <div class="mb-8" id="adicionar-representante3">
                     <h3 class="text-2xl font-semibold mb-4 text-gray-700">3. Clicar em Enviar para Adicionar esse Representante</h3>
-                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/ff271675-dab0-426c-bf29-832d8e60e5c3/bad45e0d-c41f-4227-9939-4c31970da97b.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.0454&fp-y=0.8825&fp-z=2.8627&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=71&mark-y=441&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xNjkmaD0xMDMmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
+                    <img src="https://images.tango.us/workflows/9c97aa4e-1ae6-4cc6-971b-f9d5d3904b66/steps/0509229c-d3a0-4fcc-acf5-ee8c5913a662/b67da208-5f66-49ab-b2c4-a0c18cfefb94.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.1255&fp-y=0.8252&fp-z=4.0000&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=68&mark-y=569&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xNjcmaD0xMDEmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
                          style="border-radius: 8px; border: 1px solid #F4F2F7;" 
                          class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
                          alt="Clicar em Enviar para Adicionar esse Representante" />
@@ -875,44 +883,6 @@
         });
     });
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-
-                        const targetId = this.getAttribute('href').substring(1);
-                        const targetElement = document.getElementById(targetId);
-
-                        if (targetElement) {
-                            targetElement.classList.add('section-padding');
-                            targetElement.scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                        }
-                    });
-                });
-    
-                document.addEventListener('click', function(event) {
-                if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
-                    sidebar.classList.remove('show');
-                }
-            });
-
-
-            document.addEventListener('DOMContentLoaded', function() {
-    const dropdownButton = document.getElementById('dropdownNavbarLink');
-    const dropdownMenu = document.getElementById('dropdownNavbar');
-    const regularMenu = document.getElementById('mobile-menu-2');
-
-
-    dropdownButton.addEventListener('click', function() {
-        dropdownMenu.classList.toggle('hidden');
-    });
-    document.addEventListener('click', function(event) {
-        if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.classList.add('hidden');
-        }
-    });
-
     document.addEventListener('DOMContentLoaded', function() {
     const dropdownButton = document.getElementById('dropdownNavbarLink');
     const dropdownMenu = document.getElementById('dropdownNavbar');
@@ -945,9 +915,7 @@
 
     adjustNavbarItems();
     window.addEventListener('resize', adjustNavbarItems);
-    })
-
-            })
+});
 //ASIDEBAR
 
 
@@ -989,7 +957,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     console.log('Script loaded');
-});
+}) 
+
+document.addEventListener('DOMContentLoaded', function() {
+        // ... seu código existente ...
+
+        // Adiciona offset para âncoras
+        const anchorElements = document.querySelectorAll('a[href^="#"]');
+        anchorElements.forEach(anchor => {
+            const targetId = anchor.getAttribute('href').slice(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                const offsetElement = document.createElement('span');
+                offsetElement.className = 'anchor-offset';
+                offsetElement.id = targetId;
+                targetElement.insertAdjacentElement('beforebegin', offsetElement);
+                targetElement.removeAttribute('id');
+            }
+        });
+    });
+
     </script>
 </body>
 </html>
