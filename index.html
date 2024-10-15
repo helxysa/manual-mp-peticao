@@ -120,9 +120,7 @@
         }
     }
 
-    .section-padding {
-        scroll-margin-top: 88px;
-    }
+    
 
     @media (max-width: 768px) {
         .section-padding {
@@ -146,18 +144,110 @@
             border-radius: 0.25rem;
         }
     }
+    @media (max-width: 900px) and (min-width: 769px) {
+        .navbar-custom {
+            left: 0;
+        }
+
+        .navbar-custom .container {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+
+        .navbar-custom .flex-grow {
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .navbar-custom .flex.items-center {
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        .navbar-custom a {
+            margin-top: 0;
+            margin-left: 1rem;
+        }
+
+        #sidebar-multi-level-sidebar {
+            width: 250px;
+        }
+
+        main {
+            margin-left: 250px !important;
+            padding-top: 80px;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+    }
+
+    @media (max-height: 11000px) and (min-height: 1000px) {
+        #sidebar-multi-level-sidebar {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        main {
+            min-height: 100vh;
+            overflow-y: auto;
+            transition: margin-left 0.3s ease-in-out;
+
+        }
+    }
+
+    .sidebar-item {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        display: block;
+    }
+
+    .sidebar-item-content {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+    }
+
+
+    #sidebar-multi-level-sidebar.collapsed {
+        width: 60px;
+        min-width: 60px;
+    }
+
+    #sidebar-multi-level-sidebar.collapsed .sidebar-content {
+        display: none;
+    }
+
+    #sidebar-multi-level-sidebar.collapsed #sidebar-toggle svg {
+        transform: rotate(180deg);
+    }
+
+    #sidebar-toggle {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+        #sidebar-toggle {
+            display: none;
+        }
+    }
+
     </style>
 </head>
 <body>
    <div>
     <nav class="bg-gray-50 p-6 navbar-custom">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <span class="text-[#4C5C96] font-bold text-lg">MP - Manual de Peticionamento Eletrônico</span>
+        <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between">
+            <div class="flex-grow text-center sm:text-left mb-4 sm:mb-0">
+                <span class="text-[#4C5C96] font-bold text-lg whitespace-normal sm:whitespace-nowrap">MP - Manual de Peticionamento Eletrônico</span>
             </div>
-            <div class="flex items-center">
-                <a href="https://www.mpap.mp.br/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold">Acessar Portal-MP</a>
-                <a href="https://peticionamento.mpap.mp.br/site/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold">Acessar Peticionamento Eletrônico</a>
+            <div class="flex items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                <a href="https://www.mpap.mp.br/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold whitespace-nowrap">Acessar Portal-MP</a>
+                <a href="https://peticionamento.mpap.mp.br/site/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold whitespace-nowrap">Acessar Peticionamento Eletrônico</a>
             </div>
         </div>
     </nav>
@@ -658,7 +748,7 @@
             const dropdownContent = document.getElementById(dropdown.getAttribute('aria-controls'));
             const dropdownIcon = dropdownToggle.querySelector('svg');
 
-            dropdownToggle.addEventListener('click', function() {
+            dropdownToggle.addEventListener('click', function() {   
                 dropdownContent.classList.toggle('hidden');
                 dropdownIcon.classList.toggle('rotate-180');
             });
@@ -686,6 +776,11 @@
                     sidebar.classList.remove('show');
                 }
             });
+
+            
+
+    
+
     </script>
 </body>
 </html>
