@@ -7,21 +7,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <style>
+        /* Estiliza a barra de rolagem inteira */
         ::-webkit-scrollbar {
             width: 12px;
             margin-right: 4px
         }
 
+        /* Estiliza o "thumb" da barra de rolagem */
         ::-webkit-scrollbar-thumb {
             background-color: #a7a2a2;
             border-radius: 6px;
             border: 3px solid #fff;
         }
 
+        /* Estiliza o "track" da barra de rolagem */
         ::-webkit-scrollbar-track {
             background-color: #e0e0e0;
         }
 
+        /* Para Firefox */
         * {
             scrollbar-width: thin;
             scrollbar-color: #e7eaee #cbd5e0;
@@ -30,26 +34,70 @@
         position: fixed;
         top: 0;
         right: 0;
-        left: 200px; 
+        left: 200px; /* Largura da sidebar em telas menores */
         z-index: 1000;
         transition: left 0.3s ease;
-        background-color: #f9fafb; 
+        background-color: #f9fafb; /* Cor de fundo da navbar */
     }
 
-    main {
-    padding-top: 80px;
-    margin: 130px;
-}
+        @media (min-width: 1024px) {
+            .navbar-custom {
+                left: 400px; /* Largura da sidebar em telas maiores */
+            }
+        }
 
-    .section-padding {
-        scroll-margin-top: 88px;
+        @media (max-width: 640px) {
+            .navbar-custom {
+                left: 0; /* Remove a margem em telas muito pequenas */
+            }
+        }
+
+        /* Adicione este estilo para ajustar o conteúdo principal */
+        main {
+            padding-top: 80px; 
+            margin: 130px;
+        }
+        .section-padding {
+            scroll-margin-top: 88px; 
+        }
+        @media (max-width: 640px) {
+            .section-padding {
+                scroll-margin-top: 68px;
+        } }
+        @media (max-width: 768px) {
+        .navbar-custom {
+            left: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1rem;
+        }
+
+        .navbar-custom .container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .navbar-custom .flex-grow {
+            margin-bottom: 1rem;
+        }
+
+        .navbar-custom .flex.items-center {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .navbar-custom a {
+            margin-top: 0.5rem;
+            width: 100%;
+            text-align: left;
+        }
     }
 
     #sidebar-multi-level-sidebar {
         transition: transform 0.3s ease-in-out;
     }
 
-<<<<<<< HEAD
     @media (max-width: 768px) {
         #sidebar-multi-level-sidebar {
             transform: translateX(-100%);
@@ -80,21 +128,22 @@
         }
     }
 
-=======
->>>>>>> b6c6ff2e550baa68ac9102183112147e09dc63c2
     .menu-toggle {
         display: none;
     }
-    html {
-  scroll-behavior: smooth;
-}
-.anchor-offset {
-        display: block;
-        position: relative;
-        top: -150px; /* Ajuste este valor conforme necessário */
-        visibility: hidden;
+
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1002;
+            background-color: #f9fafb;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+        }
     }
-<<<<<<< HEAD
     @media (max-width: 900px) and (min-width: 769px) {
         .navbar-custom {
             left: 0;
@@ -159,46 +208,10 @@
 
     .sidebar-item-content {
         display: inline-flex;
-=======
-    
-/* Media queries */
-@media (min-width: 1024px) {
-    .navbar-custom {
-        left: 400px;
-    }
-}
-
-@media (min-width: 1051px) {
-    #dropdownNavbarLink {
-        display: none;
-    }
-}
-
-@media (max-width: 1050px) {
-    #dropdownNavbarLink {
-        display: flex;
-    }
-
-    .navbar-custom .flex-col {
-        display: none;
-    }
-
-    .navbar-custom {
-        left: 0;
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-    }
-
-    .navbar-custom .container,
-    .navbar-custom .flex.items-center {
-        flex-direction: column;
->>>>>>> b6c6ff2e550baa68ac9102183112147e09dc63c2
         align-items: center;
         width: 100%;
     }
 
-<<<<<<< HEAD
 
     #sidebar-multi-level-sidebar.collapsed {
         width: 60px;
@@ -236,308 +249,21 @@
                 <a href="https://www.mpap.mp.br/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold whitespace-nowrap">Acessar Portal-MP</a>
                 <a href="https://peticionamento.mpap.mp.br/site/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold whitespace-nowrap">Acessar Peticionamento Eletrônico</a>
             </div>
-=======
-    .navbar-custom .flex-grow {
-        margin-bottom: 1rem;
-    }
-
-    .navbar-custom a {
-        margin-top: 0.5rem;
-        width: 100%;
-        text-align: center;
-    }
-
-    #sidebar-multi-level-sidebar {
-        transform: translateX(-100%);
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        z-index: 1001;
-        width: 80%;
-        max-width: 300px;
-    }
-
-    #sidebar-multi-level-sidebar.show {
-        transform: translateX(0);
-    }
-    main {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-   
-}
-
-   
-}
-
-
-
-@media (max-width: 768px) {
-    main section {
-        margin-top: 2rem; /* Adiciona espaço extra acima da seção */
-    }
-    main {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        justify-content: flex-start; /* Mudado de center para flex-start */
-        padding-top: 200px; /* Aumentado para empurrar o conteúdo para baixo */
-    }
-    .navbar-custom {
-        left: 0;
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-    }
-
-    .navbar-custom .container,
-    .navbar-custom .flex.items-center {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .navbar-custom .flex-grow {
-        margin-bottom: 1rem;
-    }
-
-    .navbar-custom a {
-        margin-top: 0.5rem;
-        width: 100%;
-        text-align: center;
-    }
-
-    #sidebar-multi-level-sidebar {
-        transform: translateX(-100%);
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        z-index: 1001;
-        width: 100%;
-        max-width: 300px;
-    }
-
-    #sidebar-multi-level-sidebar.show {
-        transform: translateX(0);
-    }
-        
-    /* Media query para iPhone XR e dispositivos similares */
-@media screen and (max-width: 414px) and (max-height: 430px) {
-    body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
-    /* Ajustes para a navbar */
-    .navbar-custom {
-        padding: 0.5rem;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        background-color: #f9fafb;
-    }
-
-    .navbar-custom .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar-custom span {
-        font-size: 0.9rem;
-        text-align: center;
-        margin-bottom: 0.5rem;
-    }
-
-    #dropdownNavbarLink {
-        width: 100%;
-        justify-content: center;
-        padding: 0.5rem;
-    }
-
-    #dropdownNavbar {
-        width: 100%;
-    }
-
-    /* Ajustes para o main e suas seções */
-    main {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 20px;
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-        padding-top: 300px; /* Empurra o conteúdo para baixo da navbar fixa */
-    }
-
-    main > section {
-        width: 100%;
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-top: 2rem; /* Adiciona espaço entre seções */
-    }
-
-    main > section > * {
-        max-width: 100%;
-        margin-top: 40px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Ajusta imagens para serem responsivas e centralizadas */
-    main img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 1rem auto;
-    }
-
-    /* Centraliza o texto de cabeçalhos e parágrafos */
-    main h1, main h2, main h3, main p {
-        text-align: left;
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-
-    /* Ajusta listas para ficarem alinhadas ao centro */
-    main ul, main ol {
-        display: inline-block;
-        text-align: left;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 20px;
-    }
-
-    /* Ajusta o tamanho das fontes */
-    main h1 {
-        font-size: 1.5rem;
-    }
-
-    main h2 {
-        font-size: 1.3rem;
-    }
-
-    main h3 {
-        font-size: 1.1rem;
-    }
-
-    main p, main li {
-        font-size: 0.9rem;
-    }
-
-    /* Ajusta o espaçamento entre elementos */
-    main > * + * {
-        margin-top: 1.5rem;
-    }
-
-    /* Ajustes para a sidebar, se necessário */
-    #sidebar-multi-level-sidebar {
-        width: 100%;
-        height: 100%;
-    }
- }
-}
-
-@media screen and (max-width: 1023px) { /* lg breakpoint no Tailwind */
-    .navbar-custom {
-        position: fixed; /* Garante que podemos posicionar elementos absolutos dentro */
-    }
-
-    #sidebar-toggle {
-        position: absolute;
-        left: 1rem; 
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: #2b33502c; 
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 0.375rem; /* rounded-md */
-        font-size: 0.875rem; /* text-sm */
-        font-weight: 600; /* font-semibold */
-        z-index: 10;
-    }
-
-    #sidebar-toggle h1 {
-        margin: 0;
-        font-size: 0.875rem;
-    }
-
-    
-    .navbar-custom > div {
-        padding-left: 3rem; 
-
-    #dropdownNavbarLink {
-        margin-left: auto; 
-    }
-}
-
-/* Esconda o botão em telas maiores */
-@media screen and (min-width: 1024px) {
-    #sidebar-toggle {
-        display: none;
-    }
-} 
-}
-</style>
-</head>
-<body>
-   <div>
-    <nav class="bg-gray-50 p-6 navbar-custom">    
-        <div class="hidden lg:flex items-center space-x-4">
-            <div class="container mx-30px flex justify-between items-center">
-                <span class="text-[#4C5C96] font-bold text-lg">MP - Manual de Peticionamento Eletrônico</span>
-            </div>
-            <a href="https://www.mpap.mp.br/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold">Acessar Portal-MP</a>
-            <a href="https://peticionamento.mpap.mp.br/site/" target="_blank" class="text-[#4C5C96] hover:text-blue-200 px-3 py-2 font-bold">Acessar Peticionamento Eletrônico</a>
->>>>>>> b6c6ff2e550baa68ac9102183112147e09dc63c2
         </div>
-            <!-- Dropdown para telas menores -->
-            <div class="lg:hidden">
-                <button id="sidebar-toggle" class=" p-2 rounded-md  lg:hidden bg-white text-white">
-                    <svg class="h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                      </svg>
-                </button>
-                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-bold text-[#4C5C96] hover:text-blue-200">
-                    MP - Manual de Peticionamento Eletronico
-                    <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </button>
-                <!-- Dropdown menu -->
-                <div id="dropdownNavbar" class="hidden z-10 w-44 font-normal bg-white rounded divide-y divide-gray-100 shadow">
-                    <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownNavbarLink">
-                        <li>
-                            <a href="https://www.mpap.mp.br/" target="_blank" class="block py-2 px-4 hover:bg-gray-100 text-[#4C5C96] font-bold">Acessar Portal-MP</a>
-                        </li>
-                        <li>
-                            <a href="https://peticionamento.mpap.mp.br/site/" target="_blank" class="block py-2 px-4 hover:bg-gray-100 text-[#4C5C96] font-bold">Acessar Peticionamento Eletrônico</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-    
     </nav>
 
     <div class="flex">
         
-        <aside id="sidebar-multi-level-sidebar" class="fixed top-0 left-0 z-40 h-screen transition-transform -translate-x-full lg:translate-x-0 overflow-x-hidden" aria-label="Sidebar">
+    
+
+        <aside id="sidebar-multi-level-sidebar" class="fixed top-0 left-0 z-40 h-screen transition-transform -translate-x-full sm:translate-x-0 overflow-x-hidden" aria-label="Sidebar">
             <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50  min-w-[200px] max-w-[400px] w-auto">
                 <ul class="space-y-2 font-medium">
                     <li class="p-5 flex justify-left items-center h-16">
                         <img src="https://www.mpap.mp.br/templates/portal/images/logo-mpap.png" alt="MP Logo" class="h-16 w-auto">
                         
                     </li>
-            
+                    
                     <li>
                         <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 " aria-controls="dropdown-acessar" data-collapse-toggle="dropdown-acessar">
                             <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -695,6 +421,12 @@
         
     
         <main class="flex-1 p-4 sm:ml-[200px] lg:ml-[400px] bg-white">
+            
+               
+           
+          
+            
+            
             <section id="acessar-site-peticionamento" class="max-w-3xl mx-auto px-4 py-8 mt-9 ">
                 <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                     <button type="button" class="w-full text-left p-6 focus:outline-none" aria-controls="dropdown-content-acessar-site" data-collapse-toggle="dropdown-content-acessar-site">
@@ -972,7 +704,7 @@
     
                 <div class="mb-8" id="adicionar-representante3">
                     <h3 class="text-2xl font-semibold mb-4 text-gray-700">3. Clicar em Enviar para Adicionar esse Representante</h3>
-                    <img src="https://images.tango.us/workflows/9c97aa4e-1ae6-4cc6-971b-f9d5d3904b66/steps/0509229c-d3a0-4fcc-acf5-ee8c5913a662/b67da208-5f66-49ab-b2c4-a0c18cfefb94.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.1255&fp-y=0.8252&fp-z=4.0000&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=68&mark-y=569&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xNjcmaD0xMDEmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
+                    <img src="https://images.tango.us/workflows/0057d688-bfd9-4bcd-b498-e9927b8ae1e3/steps/ff271675-dab0-426c-bf29-832d8e60e5c3/bad45e0d-c41f-4227-9939-4c31970da97b.png?fm=png&crop=focalpoint&fit=crop&fp-x=0.0454&fp-y=0.8825&fp-z=2.8627&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=71&mark-y=441&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0xNjkmaD0xMDMmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D" 
                          style="border-radius: 8px; border: 1px solid #F4F2F7;" 
                          class="w-full max-w-2xl mx-auto rounded-lg shadow-md" 
                          alt="Clicar em Enviar para Adicionar esse Representante" />
@@ -1093,101 +825,13 @@
         });
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-    const dropdownButton = document.getElementById('dropdownNavbarLink');
-    const dropdownMenu = document.getElementById('dropdownNavbar');
-    const regularMenu = document.getElementById('mobile-menu-2');
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
 
-    if (dropdownButton && dropdownMenu) {
-        dropdownButton.addEventListener('click', function() {
-            dropdownMenu.classList.toggle('hidden');
-        });
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
 
-        document.addEventListener('click', function(event) {
-            if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.classList.add('hidden');
-            }
-        });
-    }
-
-    function adjustNavbarItems() {
-        if (regularMenu) {
-            if (window.innerWidth <= 1050) {
-                regularMenu.classList.add('hidden');
-                if (dropdownButton) dropdownButton.classList.remove('hidden');
-            } else {
-                regularMenu.classList.remove('hidden');
-                if (dropdownButton) dropdownButton.classList.add('hidden');
-                if (dropdownMenu) dropdownMenu.classList.add('hidden');
-            }
-        }
-    }
-
-    adjustNavbarItems();
-    window.addEventListener('resize', adjustNavbarItems);
-});
-//ASIDEBAR
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const sidebarToggle = document.getElementById('sidebar-toggle');
-    const sidebar = document.getElementById('sidebar-multi-level-sidebar');
-
-    if (sidebarToggle && sidebar) {
-        sidebarToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            if (sidebar.style.transform === 'translateX(0px)') {
-                sidebar.style.transform = 'translateX(-100%)';
-            } else {
-                sidebar.style.transform = 'translateX(0)';
-            }
-            
-            console.log('Sidebar toggled'); // Para debug
-        });
-
-        // Fechar a sidebar quando clicar fora dela em telas menores
-        document.addEventListener('click', function(event) {
-            if (window.innerWidth < 1024 && !sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
-                sidebar.style.transform = 'translateX(-100%)';
-            }
-        });
-
-        // Ajustar a visibilidade da sidebar ao redimensionar a janela
-        window.addEventListener('resize', function() {
-            if (window.innerWidth >= 1024) {
-                sidebar.style.transform = 'translateX(0)';
-            } else {
-                sidebar.style.transform = 'translateX(-100%)';
-            }
-        });
-    } else {
-        console.error('Sidebar toggle button or sidebar not found');
-    }
-
-    console.log('Script loaded');
-}) 
-
-document.addEventListener('DOMContentLoaded', function() {
-        // ... seu código existente ...
-
-        // Adiciona offset para âncoras
-        const anchorElements = document.querySelectorAll('a[href^="#"]');
-        anchorElements.forEach(anchor => {
-            const targetId = anchor.getAttribute('href').slice(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                const offsetElement = document.createElement('span');
-                offsetElement.className = 'anchor-offset';
-                offsetElement.id = targetId;
-                targetElement.insertAdjacentElement('beforebegin', offsetElement);
-                targetElement.removeAttribute('id');
-            }
-        });
-    });
-
-<<<<<<< HEAD
                         if (targetElement) {
                             targetElement.classList.add('section-padding');
                             targetElement.scrollIntoView({
@@ -1207,8 +851,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
 
-=======
->>>>>>> b6c6ff2e550baa68ac9102183112147e09dc63c2
     </script>
 </body>
 </html>
